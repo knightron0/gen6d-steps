@@ -9,7 +9,7 @@
 
 
 ## Installation
-1. Clone the Gen6D repository
+1. Clone the [Gen6D](https://github.com/liuyuan-pal/Gen6D) repository
 ```
 git clone https://github.com/liuyuan-pal/Gen6D.git
 ```
