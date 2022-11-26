@@ -67,7 +67,7 @@ Gen6D
 |-- train
 ... etc
 ```
-You can find some test videos in this repository, called `flourbag-test1.mp4` and `flourbag-test2.mp4`.
+Here are some test videos: [one](https://drive.google.com/file/d/1JKnF-5QEYT3pkxphOLmLf6sictPqqvLh/view?usp=sharing), [two](https://drive.google.com/file/d/1xPbDRDdQJ91d880f4CjgkjZZb-t8wuuP/view?usp=sharing).
 
 2. Run the following command with the appropriate parameters.
 ```
