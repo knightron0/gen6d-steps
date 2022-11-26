@@ -13,8 +13,9 @@
 ```
 git clone https://github.com/liuyuan-pal/Gen6D.git
 ```
-2. Install [COLMAP](https://github.com/colmap/colmap/releases) for Windows. Note: make sure to install the CUDA version.
-3. Download [pretrained models](https://connecthkuhk-my.sharepoint.com/personal/yuanly_connect_hku_hk/_layouts/15/onedrive.aspx?ga=1&id=%2Fpersonal%2Fyuanly%5Fconnect%5Fhku%5Fhk%2FDocuments%2FGen6D%2Fgen6d%5Fpretrain%2Etar%2Egz&parent=%2Fpersonal%2Fyuanly%5Fconnect%5Fhku%5Fhk%2FDocuments%2FGen6D). The file structure should look like:
+2. Create a virtual environment with Python 3.6 using either pip/conda. Install all of the packages listed in `Gen6D/requirements.txt`.
+3. Install [COLMAP](https://github.com/colmap/colmap/releases) for Windows. Note: make sure to install the CUDA version.
+4. Download [pretrained models](https://connecthkuhk-my.sharepoint.com/personal/yuanly_connect_hku_hk/_layouts/15/onedrive.aspx?ga=1&id=%2Fpersonal%2Fyuanly%5Fconnect%5Fhku%5Fhk%2FDocuments%2FGen6D%2Fgen6d%5Fpretrain%2Etar%2Egz&parent=%2Fpersonal%2Fyuanly%5Fconnect%5Fhku%5Fhk%2FDocuments%2FGen6D). The file structure should look like:
 ```
 Gen6D
 |-- data
@@ -26,8 +27,8 @@ Gen6D
         |-- refiner_pretrain
             |-- model_best.pth
 ```
-4. Create a sub-folder under `data` called `custom`. Create another folder inside `custom` called `flourbag`.
-5. Download the point cloud file `object_point_cloud.ply` and meta info file `meta_info.txt`. Place it in the Gen6D folder like this:
+5. Create a sub-folder under `data` called `custom`. Create another folder inside `custom` called `flourbag`.
+6. Download the point cloud file `object_point_cloud.ply` and meta info file `meta_info.txt`. Place it in the Gen6D folder like this:
 ```
 Gen6D
 |-- data
@@ -36,7 +37,7 @@ Gen6D
            |-- object_point_cloud.ply  # object point cloud
            |-- meta_info.txt           # meta information about z+/x+ directions
 ```
-6. Download the `images` & `colmap` folders. Place them at the same level as the point cloud and meta info files.
+7. Download the `images` & `colmap` folders. Place them at the same level as the point cloud and meta info files.
 ```
 Gen6D
 |-- data
@@ -47,3 +48,26 @@ Gen6D
            |-- images                  # images
            |-- colmap                  # colmap project
 ```
+8. Install `ffmpeg` from [here](https://ffmpeg.org/download.html).
+
+## Prediction
+1. Make sure the structure of the folder looks like this:
+```
+Gen6D
+|-- data
+    |-- custom
+       |-- flourbag
+           |-- object_point_cloud.ply  # object point cloud
+           |-- meta_info.txt           # meta information about z+/x+ directions
+           |-- images                  # images
+           |-- colmap                  # colmap project
+       |-- video                       # create this new folder
+           |-- <test video>.mp4        # add your test videos in this folder
+```
+You can find some test videos in this repository, called `flourbag-test1.mp4` and `flourbag-test2.mp4`.
+
+2. Run the following command with the appropriate parameters.
+```
+python3 predict.py --cfg configs/gen6d_pretrain.yaml --database custom/flourbag  --video <path-to-video-mp4> --resolution 960 --transpose --output data/custom/flourbag/test --ffmpeg <path-to-ffmpeg-exe>
+```
+3. Find your output in `data/custom/flourbag/test/`!
