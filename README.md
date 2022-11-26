@@ -37,7 +37,7 @@ Gen6D
            |-- object_point_cloud.ply  # object point cloud
            |-- meta_info.txt           # meta information about z+/x+ directions
 ```
-7. Download the `images` & `colmap` folders. Place them at the same level as the point cloud and meta info files.
+7. Download the `images` & `colmap` folders (the `colmap` folder from [here](https://drive.google.com/file/d/1P2FH44IPs8T06AOrQTUsYm2QG5PnJeCB/view?usp=sharing)). Place them at the same level as the point cloud and meta info files.
 ```
 Gen6D
 |-- data
