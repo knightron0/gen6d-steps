@@ -63,6 +63,9 @@ Gen6D
            |-- colmap                  # colmap project
        |-- video                       # create this new folder
            |-- <test video>.mp4        # add your test videos in this folder
+|-- configs
+|-- train
+... etc
 ```
 You can find some test videos in this repository, called `flourbag-test1.mp4` and `flourbag-test2.mp4`.
 
