@@ -63,6 +63,13 @@ Gen6D
            |-- colmap                  # colmap project
        |-- video                       # create this new folder
            |-- <test video>.mp4        # add your test videos in this folder
+    |-- model
+       |-- detector_pretrain
+           |-- model_best.pth
+       |-- selector_pretrain
+           |-- model_best.pth
+       |-- refiner_pretrain
+           |-- model_best.pth
 |-- configs
 |-- train
 ... etc
